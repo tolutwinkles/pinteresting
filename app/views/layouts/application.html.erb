@@ -10,6 +10,12 @@
 <body>
 	<%= render 'layouts/header' %>
 	<div class="container">
+
+		<!--no "=" in the tag below because whe you dont want something to show on page(be hidden), no "="-->
+		<% flash.each do |name, msg| %>
+	<!--for each flash messgae, a content, a div a msg, class and alert-->
+			<%= content_tag(:div, msg, class: "alert alert-info")%>
+		<% end %>
 		<%= yield %>
 	</div>
 </body>
